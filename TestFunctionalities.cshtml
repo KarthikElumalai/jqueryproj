@@ -1,0 +1,27 @@
+﻿
+
+<html>
+<body>
+   
+<button type="button" id="btn">click the button</button>
+<p id="rData">hello</p>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            alert("Hello! I am an alert box!!");
+            var url = "/Home/getData";
+            $.get(url, null, function (data) {
+                $("#rData").html(data);
+            });
+
+            $('#btn').click(function () {
+                var url = "/Home/getMoreData";
+                $.get(url, null, function (data) {
+                    $("#rData").html(data);
+                });
+            })
+        });
+    </script>
+
+</body>
+</html>
